@@ -14,6 +14,7 @@ export const databaseProviders = [
       synchronize: process.env.DB_SYNCHRONIZE === 'true',
       entities: [
         __dirname + '/../../entities/*.entity{.ts,.js}',
+        __dirname + '/../../photo/*.entity{.ts,.js}',
       ],
     }),
   },

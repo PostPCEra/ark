@@ -13,11 +13,14 @@ import {
   RedirectIfNotAuthenticatedMiddleware,
 } from './logics/auth/middlewares';
 
+import { PhotoModule } from './photo/photo.module';
+
 @Module({
   imports: [
     NextModule,
     LogicModule,
     RouteModule,
+    PhotoModule,
   ],
 })
 export class AppModule implements NestModule {
