@@ -26,7 +26,7 @@ import { PhotoModule } from './photo/photo.module';
 export class AppModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {
     this.handleRoutes(consumer);
-    this.handleAssets(consumer);
+    this.handleAssets(consumer); 
   }
 
   private handleRoutes(consumer: MiddlewareConsumer): void {

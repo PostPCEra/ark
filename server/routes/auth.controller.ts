@@ -21,4 +21,9 @@ export class AuthController {
   public showLogin(@Req() req, @Res() res) {
     return this.next.render('/auth/login', req, res);
   }
+
+  @Get('page22')
+  public somePage(@Req() req, @Res() res) {
+    return this.next.render('/auth/page2', req, res);
+  }
 }

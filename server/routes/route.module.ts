@@ -8,6 +8,8 @@ import { HomeController } from './home.controller';
 import { PhotoController } from '../photo/photo.controller';
 import { PhotoModule } from '../photo/photo.module';
 
+// import { StubeController } from './stube.controller';
+
 @Module({
   imports: [
     NextModule,
@@ -21,6 +23,7 @@ import { PhotoModule } from '../photo/photo.module';
     HomeController,
 
     PhotoController,
+    // StubeController,
   ],
 })
 export class RouteModule {}
