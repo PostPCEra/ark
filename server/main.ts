@@ -5,6 +5,8 @@ import { AppModule } from './app.module';
 import { LogicModule } from './logics/logic.module';
 import { NextModule } from './logics/next/next.module';
 
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+
 dotenv.config();
 
 (async () => {
@@ -13,6 +15,17 @@ dotenv.config();
   app.useStaticAssets('public');
 
   app.get(LogicModule).initialize(app);
+
+  
+  const options = new DocumentBuilder()
+    .setTitle('Cats example')
+    .setDescription('Signal Tube : STube  API description')
+    .setVersion('1.0')
+    .addTag('photo')
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('restapi-ui', app, document);  // url route whatever we specify here
+ 
 
   app.get(NextModule).prepare().then(() => {
     app.listen(process.env.APP_PORT, process.env.APP_HOST, () => {
